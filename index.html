@@ -1,0 +1,1266 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KLIPKOP Gallery</title>
+<meta name="description" content="KLIPKOP is an independent gallery on Albert Road, Woodstock, Cape Town. Art from down the road. Come look.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&display=swap">
+<style>
+/* ------------------------------------------------------------------
+   KLIPKOP — Issue No. 07
+   Single-look design: a printed catalogue on linen. One palette, no dark mode.
+   ------------------------------------------------------------------ */
+:root{
+  color-scheme: light;
+  /* the five, plus tints & shades */
+  --mk:#DCCD8B;        /* Master Key — paper */
+  --mk-hi:#E8DDB0;     /* tint */
+  --mk-lo:#CDBC74;     /* shade */
+  --pp:#A7993C;        /* Prickly Pear */
+  --pp-hi:#C4B86E;
+  --mz:#475480;        /* Mozart */
+  --mz-lo:#36406A;
+  --mz-hi:#8C95B5;
+  --sb:#B57056;        /* Sunburn */
+  --sb-hi:#CE9A84;
+  --cr:#7F3B25;        /* Roycroft Copper Red — ink */
+  --cr-lo:#5E2A1A;
+  --cr-deep:#2E1209;   /* deepest shade, for text on Sunburn / Prickly Pear */
+
+  --serif:"Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --sans:"DM Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono:"DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --hand:"Caveat", "Bradley Hand", "Segoe Print", cursive;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --fs-d1: clamp(3.6rem, 13vw, 12rem);
+  --fs-d2: clamp(2.7rem, 7.5vw, 6.8rem);
+  --fs-d3: clamp(2.2rem, 5vw, 4.4rem);
+  --fs-quote: clamp(2rem, 4.6vw, 4.3rem);
+  --fs-lede: clamp(1.3rem, 2vw, 1.75rem);
+  --fs-body: 1.0625rem;
+  --fs-label: .72rem;
+
+  --delft: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='40' viewBox='0 0 96 40'%3E%3Cg fill='none' stroke='%23475480' stroke-width='1.3' stroke-linecap='round'%3E%3Cpath d='M0 20C16 6 32 34 48 20S80 6 96 20'/%3E%3Ccircle cx='48' cy='20' r='7.5'/%3E%3C/g%3E%3Cg fill='%23475480'%3E%3Cpath d='M15 13q7-9 13-3q-7 6-13 3z'/%3E%3Cpath d='M68 27q7 9 13 3q-7-6-13-3z'/%3E%3Cellipse cx='48' cy='8.5' rx='2.6' ry='4.4'/%3E%3Cellipse cx='48' cy='31.5' rx='2.6' ry='4.4'/%3E%3Cellipse cx='36.5' cy='20' rx='4.4' ry='2.6'/%3E%3Cellipse cx='59.5' cy='20' rx='4.4' ry='2.6'/%3E%3Ccircle cx='48' cy='20' r='2.6'/%3E%3Ccircle cx='6' cy='6' r='1.1'/%3E%3Ccircle cx='90' cy='34' r='1.1'/%3E%3Ccircle cx='28' cy='34' r='1.3'/%3E%3Ccircle cx='70' cy='7' r='1.3'/%3E%3C/g%3E%3C/svg%3E");
+  --delft-inv: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='40' viewBox='0 0 96 40'%3E%3Cg fill='none' stroke='%23DCCD8B' stroke-width='1.3' stroke-linecap='round'%3E%3Cpath d='M0 20C16 6 32 34 48 20S80 6 96 20'/%3E%3Ccircle cx='48' cy='20' r='7.5'/%3E%3C/g%3E%3Cg fill='%23DCCD8B'%3E%3Cpath d='M15 13q7-9 13-3q-7 6-13 3z'/%3E%3Cpath d='M68 27q7 9 13 3q-7-6-13-3z'/%3E%3Cellipse cx='48' cy='8.5' rx='2.6' ry='4.4'/%3E%3Cellipse cx='48' cy='31.5' rx='2.6' ry='4.4'/%3E%3Cellipse cx='36.5' cy='20' rx='4.4' ry='2.6'/%3E%3Cellipse cx='59.5' cy='20' rx='4.4' ry='2.6'/%3E%3Ccircle cx='48' cy='20' r='2.6'/%3E%3Ccircle cx='6' cy='6' r='1.1'/%3E%3Ccircle cx='90' cy='34' r='1.1'/%3E%3Ccircle cx='28' cy='34' r='1.3'/%3E%3Ccircle cx='70' cy='7' r='1.3'/%3E%3C/g%3E%3C/svg%3E");
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .23 0 0 0 0 .15 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip; scroll-behavior:smooth; background:var(--mk)}
+body{
+  margin:0; background:var(--mk); color:var(--cr);
+  font-family:var(--sans); font-size:var(--fs-body); line-height:1.6;
+  overflow-x:clip; -webkit-font-smoothing:antialiased;
+}
+/* paper grain over everything */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:var(--grain); opacity:.22; mix-blend-mode:multiply;
+}
+h1,h2,h3,h4,p,ol,ul,dl,dd,figure,blockquote{margin:0}
+ol,ul{padding:0; list-style:none}
+a{color:inherit}
+img,svg{max-width:100%}
+em,i{font-style:italic}
+
+:focus-visible{outline:2px solid var(--mz); outline-offset:3px; border-radius:2px}
+.on-dark :focus-visible{outline-color:var(--mk)}
+
+.sr-only{position:absolute!important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0}
+.skip{position:absolute; left:16px; top:-60px; z-index:100; background:var(--cr); color:var(--mk); padding:.6rem 1rem; font:500 .85rem var(--sans); text-decoration:none}
+.skip:focus{top:16px}
+
+.wrap{max-width:1440px; margin-inline:auto; padding-inline:var(--gutter); position:relative}
+
+/* ---------- type primitives ---------- */
+.display{
+  font-family:var(--serif); font-weight:400; line-height:.9; letter-spacing:-.025em;
+  font-optical-sizing:auto; font-variation-settings:"SOFT" 30, "WONK" 0;
+  text-wrap:balance;
+}
+.display em, .it{font-style:italic; font-weight:300; font-variation-settings:"SOFT" 100, "WONK" 1}
+.label{
+  font-family:var(--mono); font-size:var(--fs-label); font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; line-height:1.4;
+}
+.hand{font-family:var(--hand); font-weight:600; color:var(--mz); line-height:1.05}
+.lede{font-family:var(--serif); font-size:var(--fs-lede); line-height:1.3; font-weight:350; font-variation-settings:"SOFT" 50}
+.body-copy{max-width:62ch}
+.body-copy p + p{margin-top:1em}
+.rule{border:0; border-top:1px solid currentColor; margin:0; opacity:.9}
+.rule-2{border:0; border-top:1px solid currentColor; border-bottom:1px solid currentColor; height:4px; margin:0}
+
+/* line-by-line reveal */
+.ln{display:block; overflow:hidden; padding:.04em .12em .12em 0; margin-bottom:-.08em}
+.ln > span{display:block; transition:transform 1s cubic-bezier(.2,.75,.1,1); transition-delay:calc(var(--i,0) * 110ms)}
+.reveal.is-pending .ln > span{transform:translateY(112%)}
+.scribble path{stroke-dasharray:900; stroke-dashoffset:0; transition:stroke-dashoffset 1.6s cubic-bezier(.4,.1,.2,1) .5s}
+.reveal.is-pending .scribble path, .draw.is-pending path{stroke-dashoffset:900}
+.draw path{stroke-dasharray:900; transition:stroke-dashoffset 1.6s cubic-bezier(.4,.1,.2,1) .2s}
+
+/* ---------- Delft band ---------- */
+.delft-band{height:40px; background:var(--delft) repeat-x center / auto 40px; border-block:1px solid var(--mz)}
+.delft-band.inv{background-image:var(--delft-inv); border-color:var(--mk)}
+
+/* ---------- folio (page-number footer) ---------- */
+.folio{
+  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  border-top:1px solid currentColor; padding-top:.7rem; margin-top:clamp(3rem,7vw,6rem);
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
+}
+.folio b{font-weight:500}
+
+/* ---------- edge text ---------- */
+.edge{
+  position:absolute; top:0; left:calc(var(--gutter) * .32);
+  writing-mode:vertical-rl; transform:rotate(180deg);
+  font-family:var(--mono); font-size:.64rem; letter-spacing:.24em; text-transform:uppercase; white-space:nowrap;
+}
+@media (max-width:900px){ .edge{display:none} }
+
+/* =================================================================
+   1. MASTHEAD
+   ================================================================= */
+.masthead{padding-top:clamp(14px,2vw,24px); position:relative}
+.mast-top{display:flex; justify-content:space-between; align-items:baseline; gap:.6rem 2rem; flex-wrap:wrap; padding-bottom:.7rem}
+.mast-nav ul{display:flex; gap:.4rem 1.6rem; flex-wrap:wrap}
+.mast-nav a{
+  font-family:var(--sans); font-size:.9rem; font-weight:500; text-decoration:none;
+  background:linear-gradient(var(--sb),var(--sb)) 0 100% / 0 2px no-repeat;
+  transition:background-size .3s; padding-bottom:2px;
+}
+.mast-nav a:hover{background-size:100% 2px}
+
+.mast-title{
+  font-family:var(--serif); font-weight:800; line-height:.78; letter-spacing:-.045em;
+  font-size:19.5vw; /* JS fits it to the full width */
+  font-variation-settings:"SOFT" 0, "WONK" 0, "opsz" 144;
+  white-space:nowrap; margin-block:clamp(.6rem,1.4vw,1.2rem) 0;
+  text-align:center;
+}
+.mast-word{display:inline-block; padding-bottom:.06em}
+.mast-title .kop{font-style:italic; font-weight:400; font-variation-settings:"SOFT" 100, "WONK" 1, "opsz" 144; color:var(--mz); letter-spacing:-.03em}
+
+.mast-foot{
+  display:grid; grid-template-columns:1.25fr 1fr 1fr; gap:1.5rem 2.5rem; align-items:end;
+  border-top:1px solid var(--cr); padding-block:1rem 1.6rem; margin-top:.4rem;
+}
+.tagline{font-size:clamp(1.9rem, 4vw, 3.4rem); line-height:.95}
+.coverlines li{font-family:var(--serif); font-size:1.05rem; line-height:1.3; padding-block:.35rem; border-bottom:1px solid rgba(127,59,37,.35)}
+.coverlines li:first-child{border-top:1px solid rgba(127,59,37,.35)}
+.coverlines b{font-family:var(--mono); font-weight:500; font-size:.68rem; letter-spacing:.12em; margin-right:.6rem; color:var(--mz)}
+.mast-note{position:relative; justify-self:end; text-align:right}
+.mast-note .hand{font-size:clamp(1.5rem,2.2vw,2rem); display:inline-block; transform:rotate(-4deg)}
+.mast-note svg{display:block; width:70px; margin:-.2rem 0 .2rem auto; color:var(--sb)}
+.price-box{display:inline-flex; gap:1rem; margin-top:.8rem; font-family:var(--mono); font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; border:1px solid var(--cr); padding:.35rem .6rem}
+
+@media (max-width:860px){
+  .mast-foot{grid-template-columns:1fr 1fr}
+  .tagline{grid-column:1 / -1}
+}
+@media (max-width:560px){
+  .mast-foot{grid-template-columns:1fr}
+  .mast-note{justify-self:start; text-align:left}
+  .mast-note svg{margin-left:0; transform:scaleX(-1)}
+}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--cr); color:var(--mk); overflow:hidden; border-block:1px solid var(--cr-deep)}
+.marquee-track{display:flex; width:max-content; animation:marquee 60s linear infinite}
+.marquee-track span{
+  display:block; white-space:nowrap; padding-block:.7rem;
+  font-family:var(--serif); font-size:clamp(1.1rem,2vw,1.6rem); letter-spacing:.06em; font-weight:500;
+}
+.marquee-track span i{font-weight:300; font-variation-settings:"SOFT" 100,"WONK" 1; letter-spacing:.02em; color:var(--sb-hi)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* =================================================================
+   PLATES (image placeholders)
+   ================================================================= */
+.plate{
+  position:relative; overflow:hidden; isolation:isolate;
+  aspect-ratio:var(--ar, 4 / 5); max-width:100%;
+  background:var(--mk-lo);
+  transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.plate::after{ /* grain on the "photo" */
+  content:""; position:absolute; inset:0; z-index:3; pointer-events:none;
+  background-image:var(--grain); opacity:.5; mix-blend-mode:multiply;
+}
+.plate .art{
+  position:absolute; inset:-5%; z-index:1;
+  transform:translate(var(--px,0px), var(--py,0px)) scale(1.02);
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  display:grid; place-items:center;
+}
+.plate .art svg{width:72%; height:auto; overflow:visible}
+.plate-tag{
+  position:absolute; left:10px; bottom:10px; z-index:4; max-width:calc(100% - 20px);
+  background:var(--mk); color:var(--cr);
+  font-family:var(--mono); font-size:.64rem; letter-spacing:.1em; text-transform:uppercase; line-height:1.3;
+  padding:.3rem .5rem;
+}
+
+/* tones */
+.t-clay .art{background:radial-gradient(120% 90% at 30% 15%, var(--sb-hi) 0, var(--sb) 42%, var(--cr) 100%)}
+.t-sea  .art{background:linear-gradient(172deg, var(--mz-hi) 0%, var(--mz) 48%, var(--mz-lo) 100%)}
+.t-pear .art{background:linear-gradient(160deg, var(--pp-hi) 0%, var(--pp) 45%, var(--cr-lo) 120%)}
+.t-ink  .art{background:radial-gradient(90% 70% at 70% 30%, var(--cr) 0%, var(--cr-lo) 55%, var(--mz-lo) 120%)}
+.t-dusk .art{
+  background:
+    linear-gradient(180deg, transparent 0 54%, rgba(220,205,139,.55) 54.5% 55.5%, transparent 56%),
+    repeating-linear-gradient(-8deg, transparent 0 22px, rgba(127,59,37,.18) 22px 30px),
+    linear-gradient(180deg, var(--mk-hi) 0%, var(--sb-hi) 28%, var(--sb) 50%, var(--mz) 56%, var(--mz-lo) 100%);
+}
+.t-linen .art{
+  background:
+    repeating-linear-gradient(0deg, rgba(71,84,128,.85) 0 26px, transparent 26px 52px),
+    repeating-linear-gradient(90deg, rgba(71,84,128,.6) 0 26px, transparent 26px 52px),
+    var(--mk-hi);
+}
+.t-figs .art{
+  background:
+    radial-gradient(circle at 34% 58%, var(--cr) 0 15%, var(--cr-lo) 15.5% 17%, transparent 17.5%),
+    radial-gradient(circle at 60% 46%, var(--sb) 0 13%, var(--cr) 13.5% 15%, transparent 15.5%),
+    radial-gradient(circle at 70% 70%, var(--cr-lo) 0 10%, transparent 10.5%),
+    linear-gradient(180deg, var(--pp-hi) 0 62%, var(--mk) 62% 100%);
+}
+.t-slip .art{
+  background:
+    linear-gradient(180deg, var(--mk-hi) 0 26%, transparent 26%),
+    linear-gradient(180deg, transparent 26%, var(--sb-hi) 26% 52%, var(--mz) 52% 60%, var(--pp) 60% 100%);
+}
+.t-slip .art::before{
+  content:"SPAZA 24HR\A BREAD     R18.99\A AMASI     R15.50\A TOTAL     R34.49";
+  white-space:pre; position:absolute; top:6%; left:10%; right:8%;
+  font-family:var(--mono); font-size:.5rem; line-height:1.5; color:var(--cr); letter-spacing:.04em;
+}
+.t-slip .art svg{width:80%; margin-top:42%}
+
+/* =================================================================
+   SECTION SCAFFOLD
+   ================================================================= */
+.section{padding-block:clamp(4rem, 9vw, 8rem) clamp(1.5rem,3vw,2.5rem); position:relative}
+.kicker{display:flex; gap:.6rem 1.2rem; flex-wrap:wrap; align-items:center; margin-bottom:clamp(1.2rem,2.5vw,2rem)}
+.kicker .pill{background:var(--pp); color:var(--cr-deep); padding:.25rem .55rem}
+.sec-title{font-size:var(--fs-d2)}
+
+/* =================================================================
+   2. COVER STORY
+   ================================================================= */
+.cover-grid{
+  display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); column-gap:clamp(12px,2vw,28px);
+  align-items:start;
+}
+.cover-title{grid-column:1 / 10; font-size:var(--fs-d1); font-weight:500}
+.cover-title .amp{color:var(--mz); font-weight:300}
+.cover-dek{grid-column:10 / 13; align-self:end; padding-bottom:1.2rem; font-family:var(--serif); font-size:clamp(1.15rem,1.6vw,1.45rem); line-height:1.25; font-style:italic; font-variation-settings:"SOFT" 100,"WONK" 1}
+.cover-dek .label{display:block; font-style:normal; margin-bottom:.6rem}
+.cover-fig{grid-column:1 / 9; grid-row:2 / 5; margin-top:clamp(1rem,2vw,2rem)}
+.cover-fig .plate{--ar:5 / 4}
+.cover-fig .plate .art svg{width:46%}
+.cover-quote{
+  grid-column:8 / 13; grid-row:2; position:relative; z-index:2;
+  background:var(--mk); padding:clamp(1rem,2vw,1.8rem) 0 1.4rem clamp(1rem,2.5vw,2.2rem);
+  margin-top:clamp(3rem,7vw,7rem);
+}
+.cover-quote blockquote p{
+  font-family:var(--serif); font-style:italic; font-weight:300; font-size:var(--fs-quote);
+  line-height:.98; letter-spacing:-.02em; font-variation-settings:"SOFT" 100, "WONK" 1; text-wrap:balance;
+}
+.cover-quote blockquote p::before{content:"“"; color:var(--mz); margin-left:-.42em}
+.cover-quote figcaption{margin-top:1rem}
+.cover-intro{grid-column:9 / 13; grid-row:3; padding-left:clamp(0rem,1vw,1rem)}
+.cover-intro .lede{margin-bottom:1rem}
+.cover-five{grid-column:9 / 13; grid-row:4; margin-top:2rem; padding-left:clamp(0rem,1vw,1rem)}
+.cover-five table{width:100%; border-collapse:collapse; font-size:.9rem}
+.cover-five caption{text-align:left; padding-bottom:.5rem}
+.cover-five td{padding:.4rem 0; border-top:1px solid rgba(127,59,37,.4); vertical-align:top}
+.cover-five td:last-child{text-align:right; font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; padding-top:.55rem}
+.cover-five tr:last-child td{border-bottom:1px solid rgba(127,59,37,.4)}
+.fig-label{margin-top:.7rem; font-size:.86rem; line-height:1.45; max-width:60ch}
+.fig-label .label{margin-right:.5rem}
+.cover-note{position:absolute; right:-.4rem; top:-3.2rem; transform:rotate(6deg); font-size:1.7rem; z-index:3; text-align:center}
+.cover-note svg{position:absolute; inset:-34% -18%; width:136%; height:168%; color:var(--sb)}
+.rosette{position:absolute; width:clamp(90px,10vw,150px); color:var(--mz); opacity:.9; pointer-events:none}
+
+@media (max-width:960px){
+  .cover-title{grid-column:1 / -1}
+  .cover-dek{grid-column:1 / -1; padding-bottom:0; margin-top:1rem}
+  .cover-fig{grid-column:1 / -1; grid-row:auto}
+  .cover-quote{grid-column:2 / -1; grid-row:auto; margin-top:-3rem}
+  .cover-intro{grid-column:1 / 8; grid-row:auto; padding-left:0; margin-top:1rem}
+  .cover-five{grid-column:8 / -1; grid-row:auto; margin-top:1rem}
+}
+@media (max-width:640px){
+  .cover-quote{grid-column:1 / -1; margin-top:-2rem; margin-left:1.5rem}
+  .cover-intro, .cover-five{grid-column:1 / -1; padding-left:0}
+  .cover-five{margin-top:2rem}
+  .cover-note{top:-2.4rem; right:.4rem; font-size:1.4rem}
+}
+
+/* =================================================================
+   3. IN THIS ISSUE
+   ================================================================= */
+.contents{background:var(--mk-hi); border-block:1px solid var(--cr)}
+.contents-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:2rem clamp(2rem,5vw,5rem); align-items:start}
+.contents-side{position:relative}
+.big-issue{font-family:var(--serif); font-weight:800; font-size:clamp(9rem,22vw,20rem); line-height:.8; letter-spacing:-.06em; color:var(--mz); font-variation-settings:"opsz" 144, "SOFT" 0}
+.big-issue em{font-weight:300; font-style:italic; font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1}
+.contents-side p{margin-top:1rem; max-width:30ch}
+.toc{counter-reset:toc}
+.toc a{
+  display:grid; grid-template-columns:4.2rem minmax(0,1fr) auto; gap:.2rem 1.2rem; align-items:baseline;
+  padding:1.1rem .6rem; border-top:1px solid var(--cr); text-decoration:none;
+  transition:background-color .25s, padding .25s;
+}
+.toc li:last-child a{border-bottom:1px solid var(--cr)}
+.toc a:hover{background:var(--pp); color:var(--cr-deep); padding-left:1rem}
+.toc .n{font-family:var(--serif); font-size:clamp(2rem,3.5vw,3rem); line-height:1; font-weight:300; font-style:italic; color:var(--mz); font-variation-settings:"SOFT" 100,"WONK" 1; font-variant-numeric:tabular-nums}
+.toc a:hover .n{color:var(--cr-deep)}
+.toc .t{font-family:var(--serif); font-size:clamp(1.35rem,2.4vw,2.1rem); line-height:1.05; letter-spacing:-.01em}
+.toc .t small{display:block; font-family:var(--sans); font-size:.9rem; letter-spacing:0; margin-top:.3rem; line-height:1.4}
+.toc .p{font-family:var(--mono); font-size:.75rem; letter-spacing:.12em; white-space:nowrap; font-variant-numeric:tabular-nums}
+@media (max-width:760px){
+  .contents-grid{grid-template-columns:1fr}
+  .big-issue{font-size:clamp(7rem,40vw,12rem)}
+  .toc a{grid-template-columns:3rem minmax(0,1fr) auto; gap:.2rem .8rem; padding-inline:.2rem}
+}
+
+/* =================================================================
+   4. ARTIST FEATURES
+   ================================================================= */
+.features-head{display:flex; justify-content:space-between; align-items:end; gap:1rem 2rem; flex-wrap:wrap}
+.features-head .hand{font-size:clamp(1.4rem,2vw,1.8rem); transform:rotate(-3deg); max-width:22ch}
+.spread{margin-top:clamp(4rem,9vw,8rem); position:relative}
+.feat-no{font-family:var(--serif); font-style:italic; font-weight:300; color:var(--mz); font-size:clamp(5rem,12vw,11rem); line-height:.8; letter-spacing:-.04em; font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.feat-name{font-size:var(--fs-d3); font-weight:500}
+.feat-meta{margin-top:.8rem}
+.feat-bio{font-family:var(--serif); font-size:clamp(1.35rem,2.1vw,1.85rem); line-height:1.22; font-weight:400; margin-top:1.2rem; text-wrap:pretty; font-variation-settings:"SOFT" 60}
+.feat-body{margin-top:1rem; max-width:52ch}
+.plate-caption{margin-top:.6rem; font-size:.84rem; line-height:1.45}
+.plate-caption .label{display:block; margin-bottom:.15rem}
+
+/* A — image left, card overlapping right */
+.spread-a{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:clamp(12px,2vw,28px); align-items:start}
+.spread-a .fig{grid-column:1 / 8; grid-row:1 / 3}
+.spread-a .plate{--ar:4 / 5}
+.spread-a .feat-no{grid-column:9 / 13; grid-row:1; justify-self:end}
+.spread-a .card{
+  grid-column:7 / 13; grid-row:2; position:relative; z-index:2;
+  background:var(--mk-hi); border:1px solid var(--cr); padding:clamp(1.2rem,2.4vw,2.2rem);
+  margin-top:1.5rem; box-shadow:10px 10px 0 var(--sb);
+}
+.spread-a .note{position:absolute; left:46%; top:2%; z-index:3; font-size:1.7rem; transform:rotate(-7deg); text-align:center}
+.spread-a .note svg{position:absolute; inset:-30% -14%; width:128%; height:160%; color:var(--sb)}
+
+/* B — full-bleed with overlaid caption */
+.spread-b .plate{--ar:auto; aspect-ratio:auto; height:clamp(460px, 62vw, 820px); transform:none}
+.spread-b .plate .art svg{width:min(52%, 640px); margin-left:34%}
+.spread-b .shade{position:absolute; inset:0; z-index:2; background:linear-gradient(20deg, rgba(46,18,9,.88) 0%, rgba(46,18,9,.55) 38%, transparent 70%)}
+.spread-b .overlay{
+  position:absolute; z-index:4; left:0; right:0; bottom:0;
+  padding-block:clamp(1.5rem,4vw,3.5rem); color:var(--mk);
+}
+.spread-b .overlay .wrap{display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:1.5rem 3rem; align-items:end}
+.spread-b .feat-name{font-size:clamp(3.6rem,10vw,9.5rem); line-height:.85}
+.spread-b .feat-no{color:var(--mk); font-size:clamp(3rem,6vw,5.5rem)}
+.spread-b .capbox{background:var(--mk); color:var(--cr); padding:clamp(1rem,2vw,1.6rem); max-width:440px; justify-self:end}
+.spread-b .capbox .feat-bio{margin-top:0}
+.spread-b .plate-tag{left:auto; right:var(--gutter); top:var(--gutter); bottom:auto}
+@media (max-width:760px){
+  .spread-b .plate{height:clamp(380px, 110vw, 560px)}
+  .spread-b .plate .art svg{width:80%; margin-left:20%; margin-top:-30%}
+  .spread-b .overlay{position:relative; padding-block:0; margin-top:-9rem}
+  .spread-b .overlay .wrap{grid-template-columns:1fr}
+  .spread-b .capbox{justify-self:stretch; max-width:none; border:1px solid var(--cr)}
+}
+
+/* C — tall portrait with vertical name */
+.spread-c{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:clamp(12px,2vw,28px); align-items:end}
+.spread-c .text{grid-column:1 / 6; padding-bottom:2rem}
+.spread-c .vname{
+  grid-column:6 / 8; justify-self:end; align-self:stretch;
+  writing-mode:vertical-rl; transform:rotate(180deg);
+  font-size:clamp(3.4rem,8.5vw,8rem); line-height:.82; color:var(--mz); white-space:nowrap; text-align:left;
+}
+.spread-c .fig{grid-column:8 / 13}
+.spread-c .plate{--ar:3 / 5}
+.spread-c .plate .art svg{width:86%}
+.spread-c .hand{display:block; font-size:1.6rem; margin-top:1.5rem; transform:rotate(-2deg)}
+
+/* D — three till slips, pinned */
+.spread-d{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:clamp(12px,2vw,28px); align-items:center}
+.spread-d .text{grid-column:1 / 6}
+.spread-d .slips{grid-column:6 / 13; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(10px,2.5vw,36px); padding-top:2rem; align-items:start}
+.slip{position:relative}
+.slip .plate{--ar:8 / 21}
+.slip:nth-child(1){transform:rotate(-2.5deg)}
+.slip:nth-child(2){transform:rotate(1.8deg); margin-top:3rem}
+.slip:nth-child(3){transform:rotate(-1deg); margin-top:1rem}
+.slip::before{ /* masking tape */
+  content:""; position:absolute; z-index:5; top:-12px; left:50%; width:58%; height:24px;
+  transform:translateX(-50%) rotate(-4deg); background:rgba(196,184,110,.82);
+  box-shadow:0 1px 0 rgba(127,59,37,.25);
+}
+.slip .plate-caption{font-size:.75rem}
+
+@media (max-width:860px){
+  .spread-a .fig{grid-column:1 / -1; grid-row:2}
+  .spread-a .feat-no{grid-column:1 / -1; grid-row:1; justify-self:start}
+  .spread-a .card{grid-column:2 / -1; grid-row:3; margin-top:-4rem}
+  .spread-a .note{left:auto; right:6%; top:8%}
+  .spread-c .text{grid-column:1 / -1; grid-row:2; padding-top:2rem}
+  .spread-c .vname{grid-column:1 / 4; grid-row:1}
+  .spread-c .fig{grid-column:4 / -1; grid-row:1}
+  .spread-d .text{grid-column:1 / -1}
+  .spread-d .slips{grid-column:1 / -1}
+}
+@media (max-width:560px){
+  .spread-a .card{grid-column:1 / -1; margin-left:1rem; box-shadow:6px 6px 0 var(--sb)}
+  .spread-c .vname{font-size:clamp(2.8rem,15vw,4.4rem)}
+  .slip .plate-caption .label{letter-spacing:.06em}
+}
+
+/* =================================================================
+   5. THE COLLECTION
+   ================================================================= */
+.collection-head{display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:1.5rem 3rem; align-items:end; margin-bottom:clamp(2rem,5vw,4rem)}
+.collection-head p{max-width:46ch}
+.catalogue{
+  display:grid; grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:clamp(2rem,4vw,3.5rem) clamp(14px,2.2vw,32px); align-items:start;
+}
+.work{position:relative; grid-column:span var(--span,4); margin-top:var(--drop,0)}
+.work .plate{--ar:var(--war, 4 / 5)}
+.work-hover{
+  position:absolute; left:0; right:0; bottom:0; z-index:5;
+  background:var(--cr); color:var(--mk);
+  display:flex; justify-content:space-between; align-items:baseline; gap:.5rem 1rem; flex-wrap:wrap;
+  padding:.8rem 1rem; transform:translateY(101%);
+  transition:transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.work-hover .price{font-family:var(--serif); font-size:1.5rem; line-height:1; font-variant-numeric:tabular-nums}
+.work-hover a{font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:1px}
+.work-hover a:hover{color:var(--sb-hi)}
+.work:hover .work-hover, .work:focus-within .work-hover{transform:translateY(0)}
+.work:hover .plate-tag, .work:focus-within .plate-tag{opacity:0}
+.work-label{margin-top:.8rem; font-size:.86rem; line-height:1.45; border-top:1px solid var(--cr); padding-top:.55rem}
+.work-label .wt{font-family:var(--serif); font-style:italic; font-size:1.15rem; line-height:1.2; font-variation-settings:"SOFT" 100,"WONK" 1; display:block}
+.work-label .wa{font-weight:600}
+.work-label .no{float:right; font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; margin-left:.6rem; padding-top:.3rem}
+.price-static{display:none; font-family:var(--mono); font-size:.75rem; letter-spacing:.06em; margin-top:.3rem}
+@media (hover:none){
+  .price-static{display:block}
+}
+.sold{
+  position:absolute; z-index:6; top:12px; right:12px;
+  width:84px; height:84px; border-radius:50%;
+  display:grid; place-items:center; text-align:center;
+  background:var(--mk-hi); color:var(--cr);
+  border:3px double var(--sb); transform:rotate(-14deg);
+  font-family:var(--serif); font-weight:800; font-size:1.25rem; letter-spacing:.08em; line-height:.9;
+  box-shadow:0 0 0 4px rgba(232,221,176,.5);
+}
+.sold small{display:block; font-family:var(--hand); font-weight:600; font-size:1rem; letter-spacing:0; color:var(--mz); margin-top:.2rem}
+.backroom{
+  grid-column:span 4; align-self:center; padding:clamp(1.2rem,2vw,2rem);
+  border:1.5px dashed var(--mz); position:relative; transform:rotate(1.2deg);
+}
+.backroom .hand{font-size:clamp(1.7rem,2.4vw,2.2rem)}
+.backroom p + p{margin-top:.8rem}
+.backroom svg{position:absolute; width:90px; right:-14px; top:-46px; color:var(--mz)}
+
+@media (max-width:960px){
+  .collection-head{grid-template-columns:1fr}
+  .catalogue{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .work{grid-column:span var(--span-t,3); margin-top:var(--drop-t,0)}
+  .backroom{grid-column:span 6}
+}
+@media (max-width:560px){
+  .catalogue{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .work{grid-column:span var(--span-m,2); margin-top:0}
+  .backroom{grid-column:span 2}
+  .sold{width:68px; height:68px; font-size:1rem}
+  .sold small{font-size:.85rem}
+}
+
+/* =================================================================
+   6. MANIFESTO
+   ================================================================= */
+.manifesto{background:var(--mz); color:var(--mk); position:relative; overflow:hidden}
+.manifesto .inner{padding-block:clamp(4.5rem,11vw,10rem) clamp(1.5rem,3vw,2.5rem); position:relative}
+.manifesto h2{font-size:clamp(3.4rem,11.5vw,11rem); font-weight:400; line-height:.86; max-width:12ch}
+.manifesto h2 em{color:var(--mk-hi)}
+.manifesto .rosette{color:var(--mk); opacity:.85}
+.mani-lines{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem clamp(1.5rem,3vw,3rem); margin-top:clamp(3rem,6vw,5rem)}
+.mani-lines li{border-top:1px solid var(--mk); padding-top:1rem; font-family:var(--serif); font-size:clamp(1.25rem,1.9vw,1.6rem); line-height:1.25}
+.mani-sign{font-family:var(--hand); font-size:clamp(1.6rem,2.6vw,2.3rem); color:var(--mk-hi); margin-top:2.5rem; transform:rotate(-2deg); display:inline-block}
+@media (max-width:760px){ .mani-lines{grid-template-columns:1fr} }
+
+/* =================================================================
+   7. VISIT
+   ================================================================= */
+.visit-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:clamp(2.5rem,5vw,5rem); align-items:start}
+.addr{font-family:var(--serif); font-size:clamp(1.6rem,2.8vw,2.4rem); line-height:1.12; font-style:normal; margin-top:1.8rem}
+.hours{margin-top:2rem; border-top:1px solid var(--cr)}
+.hours div{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:1rem; padding-block:.55rem; border-bottom:1px solid rgba(127,59,37,.45)}
+.hours dt{font-weight:500}
+.hours dd{font-family:var(--mono); font-size:.88rem; font-variant-numeric:tabular-nums; text-align:right}
+.hours .closed dd{font-family:var(--hand); font-size:1.35rem; color:var(--mz); line-height:1}
+.coffee{
+  margin-top:2rem; display:flex; align-items:center; gap:1rem;
+  background:var(--sb); color:var(--cr-deep); padding:1rem 1.2rem;
+  font-family:var(--serif); font-size:clamp(1.3rem,2vw,1.7rem); line-height:1.15; font-weight:500;
+}
+.coffee svg{flex:none; width:44px}
+.getting{margin-top:1.6rem; max-width:52ch; font-size:.95rem}
+.map-fig{position:relative}
+.map{display:block; width:100%; height:auto; background:var(--mk-hi); border:1px solid var(--cr); transform:rotate(-1.2deg); box-shadow:8px 10px 0 rgba(127,59,37,.18)}
+.map-fig figcaption{margin-top:1rem; font-size:.84rem}
+@media (max-width:860px){ .visit-grid{grid-template-columns:1fr} }
+
+/* =================================================================
+   8. FOOTER
+   ================================================================= */
+.footer{background:var(--cr); color:var(--mk); position:relative}
+.footer .inner{padding-block:clamp(4rem,8vw,7rem) 1.5rem}
+.footer-grid{display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:3rem clamp(2rem,6vw,6rem); align-items:start}
+.footer h2{font-size:clamp(3rem,8vw,7rem); font-weight:400}
+.footer h2 em{color:var(--sb-hi)}
+.footer .lede{margin-top:1.2rem; max-width:34ch}
+.signup{margin-top:2rem; display:flex; flex-wrap:wrap; gap:.8rem; align-items:end; max-width:560px}
+.signup .field{flex:1 1 240px; display:flex; flex-direction:column; gap:.4rem}
+.signup label{font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase}
+.signup input{
+  font:inherit; font-size:1.05rem; color:var(--cr); background:var(--mk);
+  border:0; border-bottom:3px solid var(--sb); padding:.85rem 1rem; border-radius:0; width:100%;
+}
+.signup input::placeholder{color:var(--cr-lo); opacity:.75}
+.signup input:focus-visible{outline:2px solid var(--mk); outline-offset:3px}
+.btn{
+  font-family:var(--sans); font-weight:700; font-size:1rem; letter-spacing:.01em;
+  background:var(--sb); color:var(--cr-deep); border:0; padding:.95rem 1.4rem; border-radius:0; cursor:pointer;
+  box-shadow:4px 4px 0 var(--cr-deep); transition:transform .15s, box-shadow .15s, background-color .2s;
+}
+.btn:hover{background:var(--pp); transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--cr-deep)}
+.btn:active{transform:translate(2px,2px); box-shadow:2px 2px 0 var(--cr-deep)}
+.btn:focus-visible{outline:2px solid var(--mk); outline-offset:4px}
+.signup-msg{flex-basis:100%; min-height:1.6em; font-family:var(--hand); font-size:1.5rem; color:var(--mk-hi)}
+.footer .contact dt{font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; margin-top:1.4rem}
+.footer .contact dt:first-child{margin-top:0}
+.footer .contact dd{font-family:var(--serif); font-size:clamp(1.3rem,2vw,1.7rem); line-height:1.2; margin-top:.2rem; word-break:break-word}
+.signoff{
+  margin-top:clamp(3.5rem,8vw,7rem); font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(2.6rem,9vw,8.5rem); line-height:.9; letter-spacing:-.03em; font-variation-settings:"SOFT" 100,"WONK" 1;
+  text-wrap:balance;
+}
+.signoff b{font-style:normal; font-weight:700; font-variation-settings:"SOFT" 0,"WONK" 0}
+.footer .folio{margin-top:2.5rem}
+@media (max-width:760px){ .footer-grid{grid-template-columns:1fr} }
+
+/* =================================================================
+   CURSOR
+   ================================================================= */
+.cursor{position:fixed; left:0; top:0; z-index:200; pointer-events:none; opacity:0; transition:opacity .2s}
+.has-cursor .cursor{opacity:1}
+.cursor .dot{
+  position:absolute; width:12px; height:12px; margin:-6px 0 0 -6px; border-radius:50%;
+  background:var(--sb); box-shadow:0 0 0 1.5px var(--mk);
+  transition:width .25s, height .25s, margin .25s, background-color .25s;
+}
+.cursor.is-link .dot{width:34px; height:34px; margin:-17px 0 0 -17px; background:transparent; border:1.5px solid var(--cr); box-shadow:none}
+.cursor .eye{
+  position:absolute; width:90px; height:90px; margin:-45px 0 0 -45px; border-radius:50%;
+  background:var(--mk); color:var(--mz); border:1.5px solid var(--mz);
+  display:grid; place-items:center; align-content:center; gap:0;
+  transform:scale(.2); opacity:0; transition:transform .3s cubic-bezier(.3,1.4,.5,1), opacity .2s;
+}
+.cursor .eye svg{width:40px; height:auto}
+.cursor .eye span{font-family:var(--hand); font-size:1.15rem; font-weight:700; line-height:.8; margin-top:-2px}
+.cursor.is-kyk .eye{transform:scale(1); opacity:1}
+.cursor.is-kyk .dot{opacity:0}
+.has-cursor body, .has-cursor a, .has-cursor button, .has-cursor label{cursor:none}
+.has-cursor input{cursor:text}
+
+/* =================================================================
+   reduced motion
+   ================================================================= */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .marquee-track{animation:none}
+  .ln > span, .scribble path, .draw path, .plate, .plate .art, .work-hover{transition:none}
+  .reveal.is-pending .ln > span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- shared Delft ornaments -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="delft-rose" viewBox="-60 -60 120 120">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <circle r="11"/>
+        <circle r="46" stroke-dasharray="1 7"/>
+        <path d="M0-14C9-22 9-34 0-42C-9-34-9-22 0-14Z" fill="currentColor"/>
+        <path d="M0-14C9-22 9-34 0-42C-9-34-9-22 0-14Z" fill="currentColor" transform="rotate(90)"/>
+        <path d="M0-14C9-22 9-34 0-42C-9-34-9-22 0-14Z" fill="currentColor" transform="rotate(180)"/>
+        <path d="M0-14C9-22 9-34 0-42C-9-34-9-22 0-14Z" fill="currentColor" transform="rotate(270)"/>
+        <path d="M0-15C6-21 6-28 0-33C-6-28-6-21 0-15Z" transform="rotate(45)"/>
+        <path d="M0-15C6-21 6-28 0-33C-6-28-6-21 0-15Z" transform="rotate(135)"/>
+        <path d="M0-15C6-21 6-28 0-33C-6-28-6-21 0-15Z" transform="rotate(225)"/>
+        <path d="M0-15C6-21 6-28 0-33C-6-28-6-21 0-15Z" transform="rotate(315)"/>
+        <path d="M30 30c10 10 22 4 20-6c-2-8-12-6-10 2"/>
+        <path d="M30 30c10 10 22 4 20-6c-2-8-12-6-10 2" transform="rotate(90)"/>
+        <path d="M30 30c10 10 22 4 20-6c-2-8-12-6-10 2" transform="rotate(180)"/>
+        <path d="M30 30c10 10 22 4 20-6c-2-8-12-6-10 2" transform="rotate(270)"/>
+      </g>
+      <circle r="4" fill="currentColor"/>
+    </symbol>
+    <symbol id="arrow-curly" viewBox="0 0 80 50">
+      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M74 6C60 4 44 10 40 22c-3 9 8 12 10 4 2-9-14-10-22-2C20 32 14 40 8 44"/>
+        <path d="M6 32 8 44 20 42"/>
+      </g>
+    </symbol>
+    <symbol id="loop" viewBox="0 0 200 80" preserveAspectRatio="none">
+      <path d="M22 50C4 30 40 8 104 6c64-2 96 14 90 34-6 22-62 34-112 32C40 70 6 58 12 40 18 24 60 14 92 13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to the good stuff</a>
+
+<!-- =============================== 1. MASTHEAD =============================== -->
+<header class="masthead" id="top">
+  <div class="wrap">
+    <span class="edge" aria-hidden="true">Vol. II · The Woodstock issue · p. 01</span>
+    <div class="mast-top">
+      <p class="label">Issue No. 07 · Spring 2026 · Woodstock, Cape Town</p>
+      <nav class="mast-nav" aria-label="Main">
+        <ul>
+          <li><a href="#cover">Now Showing</a></li>
+          <li><a href="#artists">Artists</a></li>
+          <li><a href="#visit">Visit</a></li>
+          <li><a href="#kyk-letter">Say Howzit</a></li>
+        </ul>
+      </nav>
+    </div>
+    <hr class="rule-2">
+    <h1 class="mast-title"><span class="mast-word" id="mastWord">KLIP<span class="kop">KOP</span></span></h1>
+    <div class="mast-foot">
+      <p class="tagline display reveal">
+        <span class="ln"><span style="--i:0">Art from down the road.</span></span>
+        <span class="ln"><span style="--i:1"><em>Come look.</em></span></span>
+      </p>
+      <ul class="coverlines" aria-label="In this issue">
+        <li><b>p.04</b>Salt &amp; Clay: five sculptors, one coastline</li>
+        <li><b>p.10</b>Thandi’s big heads (her neighbours have questions)</li>
+        <li><b>p.22</b>Eight works, three already gone</li>
+      </ul>
+      <div class="mast-note">
+        <span class="hand">“kom kyk” means come look.<br>So, kom kyk!</span>
+        <svg viewBox="0 0 80 50" aria-hidden="true"><use href="#arrow-curly"/></svg>
+        <span class="price-box"><span>Entry R0</span><span>Coffee R25</span></span>
+      </div>
+    </div>
+  </div>
+  <div class="delft-band" aria-hidden="true"></div>
+  <div class="marquee">
+    <p class="sr-only">Now showing: Salt &amp; Clay. Come look. Kom kyk.</p>
+    <div class="marquee-track" aria-hidden="true">
+      <span>NOW SHOWING · SALT &amp; CLAY · COME LOOK · <i>kom kyk</i> · NOW SHOWING · SALT &amp; CLAY · COME LOOK · <i>kom kyk</i> ·&nbsp;</span>
+      <span>NOW SHOWING · SALT &amp; CLAY · COME LOOK · <i>kom kyk</i> · NOW SHOWING · SALT &amp; CLAY · COME LOOK · <i>kom kyk</i> ·&nbsp;</span>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =============================== 2. COVER STORY =============================== -->
+<section class="section" id="cover" aria-labelledby="cover-title">
+  <div class="wrap">
+    <span class="edge" aria-hidden="true">Cover story · Salt &amp; Clay · p. 04</span>
+    <div class="kicker">
+      <span class="label pill">Cover story</span>
+      <span class="label">Now showing · 12 Sep – 22 Nov 2026</span>
+    </div>
+    <div class="cover-grid">
+      <h2 class="cover-title display reveal" id="cover-title">
+        <span class="ln"><span style="--i:0">Salt <em class="amp">&amp;</em></span></span>
+        <span class="ln"><span style="--i:1"><em>Clay</em></span></span>
+      </h2>
+      <p class="cover-dek"><span class="label">The exhibition</span>Five sculptors from the False Bay coast, and a lot of sea air.</p>
+
+      <figure class="cover-fig">
+        <div class="plate t-sea" data-kyk data-tilt role="img" aria-label="Placeholder image: Tide Jar III by Nomvula Sithole, a tall salt-glazed stoneware jar in rust and cream, photographed against a deep blue wall.">
+          <div class="art">
+            <svg viewBox="0 0 200 240" aria-hidden="true">
+              <ellipse cx="100" cy="226" rx="70" ry="9" fill="#2E1209" opacity=".35"/>
+              <path d="M74 40c-6-12 4-22 26-22s32 10 26 22c-4 8-6 12 4 22 34 32 38 92 12 140-6 12-16 22-42 22s-36-10-42-22C32 154 36 94 70 62c10-10 8-14 4-22z" fill="#B57056"/>
+              <path d="M70 62c-14 14-24 34-28 56 30 10 86 10 116 0-4-22-14-42-28-56-20 6-40 6-60 0z" fill="#CE9A84" opacity=".8"/>
+              <path d="M44 150c30 12 82 12 112 0" stroke="#7F3B25" stroke-width="3" fill="none"/>
+              <path d="M48 168c28 10 76 10 104 0" stroke="#DCCD8B" stroke-width="2" fill="none" stroke-dasharray="2 6" stroke-linecap="round"/>
+              <g fill="#E8DDB0" opacity=".9"><circle cx="86" cy="96" r="2"/><circle cx="112" cy="84" r="1.5"/><circle cx="124" cy="110" r="2.4"/><circle cx="74" cy="124" r="1.4"/><circle cx="100" cy="132" r="1.8"/></g>
+            </svg>
+          </div>
+          <span class="plate-tag">Fig. 1 · Tide Jar III</span>
+        </div>
+        <figcaption class="fig-label"><span class="label">Fig. 1</span>Nomvula Sithole, <i>Tide Jar III</i>, 2026, salt-glazed stoneware, 64 × 41 cm</figcaption>
+      </figure>
+
+      <figure class="cover-quote">
+        <span class="cover-note hand" aria-hidden="true">her words,<br>not ours
+          <svg aria-hidden="true"><use href="#loop"/></svg>
+        </span>
+        <blockquote class="reveal">
+          <p>The sea does half the work. I just pick things up and bake them.</p>
+        </blockquote>
+        <figcaption class="label">Nomvula Sithole · Kalk Bay</figcaption>
+      </figure>
+
+      <div class="cover-intro body-copy">
+        <p class="lede">Five people, one stretch of coast, and a lot of clay.</p>
+        <p>Nomvula, Bongani, Chantal, Kobus and Zaid all live within spitting distance of False Bay, and it shows. There are salt-glazed pots, a bronze bait bucket, and a seal that Chantal swears is not her ex.</p>
+        <p>Come have a look. Ask who made what and why. We’ll put the kettle on.</p>
+      </div>
+
+      <div class="cover-five">
+        <table>
+          <caption class="label">The five, and where they live</caption>
+          <tbody>
+            <tr><td>Nomvula Sithole</td><td>Kalk Bay</td></tr>
+            <tr><td>Bongani Mthethwa</td><td>Muizenberg</td></tr>
+            <tr><td>Chantal Februarie</td><td>Strand</td></tr>
+            <tr><td>Kobus Smit</td><td>Simon’s Town</td></tr>
+            <tr><td>Zaid Abrahams</td><td>Gordon’s Bay</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="folio"><b>KLIPKOP</b><span>Issue 07 · Spring 2026</span><span>p. 04</span></p>
+  </div>
+</section>
+
+<!-- =============================== 3. IN THIS ISSUE =============================== -->
+<section class="section contents" id="contents" aria-labelledby="contents-title">
+  <div class="wrap">
+    <div class="contents-grid">
+      <div class="contents-side">
+        <p class="big-issue" aria-hidden="true">0<em>7</em></p>
+        <h2 class="sec-title display reveal" id="contents-title">
+          <span class="ln"><span style="--i:0">In this</span></span>
+          <span class="ln"><span style="--i:1"><em>issue</em></span></span>
+        </h2>
+        <p>Everything on the walls and floor this spring, in roughly the order you’ll bump into it.</p>
+      </div>
+      <ol class="toc">
+        <li><a href="#cover"><span class="n">01</span><span class="t">Salt &amp; Clay<small>Five sculptors, one coastline, a lot of salt</small></span><span class="p">p. 04</span></a></li>
+        <li><a href="#artists"><span class="n">02</span><span class="t">Four people who make things<small>Heads, gulls, kitchens and taxis</small></span><span class="p">p. 10</span></a></li>
+        <li><a href="#collection"><span class="n">03</span><span class="t">The Collection<small>Eight works, three already gone</small></span><span class="p">p. 22</span></a></li>
+        <li><a href="#manifesto"><span class="n">04</span><span class="t">A small manifesto<small>On dress codes, mostly</small></span><span class="p">p. 31</span></a></li>
+        <li><a href="#visit"><span class="n">05</span><span class="t">Come visit<small>Albert Road, kettle on</small></span><span class="p">p. 34</span></a></li>
+        <li><a href="#kyk-letter"><span class="n">06</span><span class="t">The Kyk Letter<small>Post from us, about once a month</small></span><span class="p">p. 38</span></a></li>
+      </ol>
+    </div>
+    <p class="folio"><b>KLIPKOP</b><span>Contents</span><span>p. 03</span></p>
+  </div>
+</section>
+
+<!-- =============================== 4. ARTIST FEATURES =============================== -->
+<section class="section" id="artists" aria-labelledby="artists-title">
+  <div class="wrap">
+    <span class="edge" aria-hidden="true">Features · Four people who make things · p. 10</span>
+    <div class="kicker"><span class="label pill">Features</span><span class="label">Four artists · All from round here</span></div>
+    <div class="features-head">
+      <h2 class="sec-title display reveal" id="artists-title">
+        <span class="ln"><span style="--i:0">Four people</span></span>
+        <span class="ln"><span style="--i:1">who <em>make things</em></span></span>
+      </h2>
+      <p class="hand">Ask Mo for the long versions. She has time.</p>
+    </div>
+
+    <!-- A: Thandi -->
+    <article class="spread spread-a" aria-labelledby="f1">
+      <p class="feat-no" aria-hidden="true">01</p>
+      <figure class="fig">
+        <div class="plate t-clay" data-kyk data-tilt role="img" aria-label="Placeholder image: a huge glazed ceramic head by Thandi Mokoena, eyes half closed, standing in a garage.">
+          <div class="art">
+            <svg viewBox="0 0 200 240" aria-hidden="true">
+              <ellipse cx="100" cy="228" rx="64" ry="8" fill="#2E1209" opacity=".35"/>
+              <path d="M62 196h76l6 30H56z" fill="#5E2A1A"/>
+              <path d="M100 18c48 0 70 40 66 92-3 44-26 86-66 90-40-4-63-46-66-90-4-52 18-92 66-92z" fill="#DCCD8B"/>
+              <path d="M100 18c48 0 70 40 66 92-1 14-5 28-10 40-14-40-34-70-56-70S58 110 44 150c-5-12-9-26-10-40-4-52 18-92 66-92z" fill="#E8DDB0"/>
+              <path d="M62 104c8-5 20-5 28 0M110 104c8-5 20-5 28 0" stroke="#7F3B25" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <path d="M100 112v30c-4 4-10 6-14 4" stroke="#7F3B25" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M80 166c12 6 28 6 40 0" stroke="#B57056" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <path d="M44 70c20-30 92-40 118-4" stroke="#475480" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/>
+            </svg>
+          </div>
+          <span class="plate-tag">Head No. 9 (Big Sis)</span>
+        </div>
+        <figcaption class="plate-caption"><span class="label">Plate 2</span>Thandi Mokoena, <i>Head No. 9 (Big Sis)</i>, 2026, earthenware and slip, 78 × 54 × 50 cm</figcaption>
+      </figure>
+      <span class="note hand" aria-hidden="true">the big one is<br>1.4 m tall!!
+        <svg aria-hidden="true"><use href="#loop"/></svg>
+      </span>
+      <div class="card">
+        <p class="label">Feature 01 of 04</p>
+        <h3 class="feat-name display reveal" id="f1"><span class="ln"><span>Thandi <em>Mokoena</em></span></span></h3>
+        <p class="feat-meta label">Ceramics · Mitchells Plain</p>
+        <p class="feat-bio">Thandi makes giant ceramic heads in her garage in Mitchells Plain. Her neighbours have stopped asking.</p>
+        <p class="feat-body">She fires them in a kiln she built from a pizza-oven kit and a YouTube video. Every head is somebody from her street, and nobody gets to see theirs until it’s done. Three are here now. The biggest one needed four guys and a bakkie to get through the door.</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- B: Piet (full bleed) -->
+  <article class="spread spread-b" aria-labelledby="f2">
+    <div class="plate t-ink" data-kyk role="img" aria-label="Placeholder image: a seagull sculpture by Piet Jacobs, welded from rusted winch parts with a polished bronze beak, against a dark harbour wall.">
+      <div class="art">
+        <svg viewBox="0 0 260 200" aria-hidden="true">
+          <path d="M20 120 96 88l40-36 40 8 28-22 24 6-24 16 14 6-30 6-6 34-40 32-66 8z" fill="#A7993C"/>
+          <path d="M96 88 136 52l40 8-30 38z" fill="#C4B86E"/>
+          <path d="M228 32l30-4-26 14z" fill="#E8DDB0"/>
+          <circle cx="210" cy="36" r="3.5" fill="#2E1209"/>
+          <g stroke="#DCCD8B" stroke-width="2" fill="none" opacity=".75"><circle cx="128" cy="112" r="14"/><circle cx="128" cy="112" r="6"/><path d="M40 128l60-6M60 140l50-8"/></g>
+          <path d="M120 170v26M140 166v30" stroke="#5E2A1A" stroke-width="5" stroke-linecap="round"/>
+          <path d="M108 196h46" stroke="#5E2A1A" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="shade" aria-hidden="true"></div>
+      <span class="plate-tag">Plate 3 · Seagull, Reconstructed</span>
+    </div>
+    <div class="overlay on-dark">
+      <div class="wrap">
+        <div>
+          <p class="feat-no" aria-hidden="true">02</p>
+          <h3 class="feat-name display reveal" id="f2">
+            <span class="ln"><span style="--i:0">Piet</span></span>
+            <span class="ln"><span style="--i:1"><em>Jacobs</em></span></span>
+          </h3>
+        </div>
+        <div class="capbox">
+          <p class="label">Feature 02 of 04 · Found objects &amp; bronze · Hout Bay</p>
+          <p class="feat-bio" style="margin-top:.7rem">Piet welds bits of old fishing boats into seagulls. He gets seasick on the ferry.</p>
+          <p class="plate-caption">Thirty years as a fitter and turner, then he made a bird out of a broken winch and couldn’t stop. He casts the beaks in bronze because “a gull without a proper beak is just a pigeon with ambition.”</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="wrap">
+    <!-- C: Amina (tall portrait, vertical name) -->
+    <article class="spread spread-c" aria-labelledby="f3">
+      <div class="text">
+        <p class="feat-no" aria-hidden="true">03</p>
+        <p class="label">Feature 03 of 04 · Oil on linen · Salt River</p>
+        <p class="feat-bio">Amina paints her aunties’ kitchens in Salt River, one tablecloth at a time. She does not take requests.</p>
+        <p class="feat-body">Big oils, thick paint, lots of blue-and-white china. She paints from memory and, she says, from smell. Ask her about the one with the burnt koeksisters. She’ll tell you it’s a self-portrait.</p>
+        <span class="hand" aria-hidden="true">← that tablecloth is real. It’s in the kitchen.</span>
+      </div>
+      <h3 class="vname display" id="f3">Amina <em>Davids</em></h3>
+      <figure class="fig">
+        <div class="plate t-linen" data-kyk data-tilt role="img" aria-label="Placeholder image: Auntie Faiza's Tablecloth by Amina Davids, a tall oil painting of a blue-and-white checked tablecloth with a teapot and a plate of figs.">
+          <div class="art">
+            <svg viewBox="0 0 200 240" aria-hidden="true">
+              <ellipse cx="100" cy="170" rx="80" ry="22" fill="#DCCD8B" stroke="#475480" stroke-width="3"/>
+              <ellipse cx="100" cy="170" rx="58" ry="14" fill="none" stroke="#475480" stroke-width="1.5" stroke-dasharray="3 5"/>
+              <circle cx="80" cy="164" r="13" fill="#7F3B25"/><circle cx="104" cy="168" r="12" fill="#B57056"/><circle cx="124" cy="162" r="11" fill="#5E2A1A"/>
+              <path d="M70 60h56c6 0 10 6 10 14l-4 50c-2 10-10 16-20 16H84c-10 0-18-6-20-16l-4-50c0-8 4-14 10-14z" fill="#E8DDB0" stroke="#475480" stroke-width="3"/>
+              <path d="M136 80c18-2 24 20 6 30" stroke="#475480" stroke-width="5" fill="none"/>
+              <path d="M62 84c-16-6-24-16-26-28" stroke="#475480" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <use href="#delft-rose" x="78" y="78" width="40" height="40" color="#475480"/>
+              <path d="M84 60c0-10 28-10 28 0" fill="#475480"/>
+            </svg>
+          </div>
+          <span class="plate-tag">Auntie Faiza’s Tablecloth</span>
+        </div>
+        <figcaption class="plate-caption"><span class="label">Plate 4</span>Amina Davids, <i>Auntie Faiza’s Tablecloth</i>, 2025, oil on linen, 120 × 90 cm</figcaption>
+      </figure>
+    </article>
+
+    <!-- D: Lwazi (till slips) -->
+    <article class="spread spread-d" aria-labelledby="f4">
+      <div class="text">
+        <p class="feat-no" aria-hidden="true">04</p>
+        <p class="label">Feature 04 of 04 · Gouache · Khayelitsha</p>
+        <h3 class="feat-name display reveal" id="f4"><span class="ln"><span>Lwazi <em>Ndlovu</em></span></span></h3>
+        <p class="feat-bio">Lwazi paints taxi ranks in gouache on the backs of old till slips. His studio is the front seat of a Quantum.</p>
+        <p class="feat-body">He collects slips from the spaza on his corner, paints the 6am rush on his way to work, and sells them for about the price of a takeaway. Small, quick and annoyingly good.</p>
+      </div>
+      <div class="slips">
+        <figure class="slip">
+          <div class="plate t-slip" data-kyk data-tilt role="img" aria-label="Placeholder image: Rank, 6:14am, a tiny gouache of a minibus taxi painted on a shop till slip.">
+            <div class="art"><svg viewBox="0 0 100 60" aria-hidden="true"><rect x="6" y="14" width="84" height="34" rx="9" fill="#E8DDB0"/><rect x="14" y="20" width="16" height="11" fill="#475480"/><rect x="34" y="20" width="16" height="11" fill="#475480"/><rect x="54" y="20" width="16" height="11" fill="#475480"/><circle cx="26" cy="50" r="7" fill="#2E1209"/><circle cx="72" cy="50" r="7" fill="#2E1209"/></svg></div>
+          </div>
+          <figcaption class="plate-caption"><span class="label">Rank, 6:14am</span>gouache on till slip, 8 × 21 cm</figcaption>
+        </figure>
+        <figure class="slip">
+          <div class="plate t-slip" data-kyk data-tilt role="img" aria-label="Placeholder image: Bellville, Late, a tiny gouache of taxis queued under orange streetlights on a till slip.">
+            <div class="art"><svg viewBox="0 0 100 60" aria-hidden="true"><rect x="2" y="18" width="56" height="28" rx="8" fill="#B57056"/><rect x="46" y="22" width="52" height="26" rx="8" fill="#E8DDB0"/><circle cx="16" cy="48" r="6" fill="#2E1209"/><circle cx="62" cy="50" r="6" fill="#2E1209"/><circle cx="86" cy="50" r="6" fill="#2E1209"/><circle cx="80" cy="6" r="5" fill="#DCCD8B"/></svg></div>
+          </div>
+          <figcaption class="plate-caption"><span class="label">Bellville, Late</span>gouache on till slip, 8 × 24 cm</figcaption>
+        </figure>
+        <figure class="slip">
+          <div class="plate t-slip" data-kyk data-tilt role="img" aria-label="Placeholder image: Gaaatjie, a tiny gouache of a taxi guard leaning out of a sliding door, on a till slip.">
+            <div class="art"><svg viewBox="0 0 100 60" aria-hidden="true"><rect x="10" y="12" width="80" height="38" rx="9" fill="#E8DDB0"/><rect x="40" y="16" width="20" height="30" fill="#2E1209"/><circle cx="50" cy="24" r="5" fill="#B57056"/><path d="M50 30v10M50 34l12-6" stroke="#B57056" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="52" r="6" fill="#2E1209"/><circle cx="76" cy="52" r="6" fill="#2E1209"/></svg></div>
+          </div>
+          <figcaption class="plate-caption"><span class="label">Gaaatjie</span>gouache on till slip, 8 × 19 cm</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <p class="folio"><b>KLIPKOP</b><span>Features</span><span>p. 10–21</span></p>
+  </div>
+</section>
+
+<!-- =============================== 5. THE COLLECTION =============================== -->
+<section class="section" id="collection" aria-labelledby="collection-title" style="border-top:1px solid var(--cr)">
+  <div class="wrap">
+    <span class="edge" aria-hidden="true">Catalogue · The Collection · p. 22</span>
+    <div class="kicker"><span class="label pill">Catalogue</span><span class="label">8 works · Prices in rand · Lay-by welcome</span></div>
+    <div class="collection-head">
+      <h2 class="sec-title display reveal" id="collection-title">
+        <span class="ln"><span style="--i:0">The</span></span>
+        <span class="ln"><span style="--i:1"><em>Collection</em></span></span>
+      </h2>
+      <p>Touch with your eyes. Ask about everything else. Prices are on the label because we think that’s only fair. If something’s sold, there’s usually a cousin of it in the back.</p>
+    </div>
+
+    <div class="catalogue">
+      <article class="work" style="--span:4; --war:4/5; --span-t:3">
+        <div class="plate t-clay" data-kyk data-tilt role="img" aria-label="Placeholder image: Untitled (Kalk Bay), a squat glazed stoneware pot with a speckled cream lip.">
+          <div class="art"><svg viewBox="0 0 200 200" aria-hidden="true"><ellipse cx="100" cy="182" rx="70" ry="8" fill="#2E1209" opacity=".3"/><path d="M60 60h80c4 0 6 4 4 8 30 30 30 80 0 104-10 8-26 10-44 10s-34-2-44-10c-30-24-30-74 0-104-2-4 0-8 4-8z" fill="#E8DDB0"/><path d="M36 120c30 14 98 14 128 0 0 22-8 40-20 52-10 8-26 10-44 10s-34-2-44-10c-12-12-20-30-20-52z" fill="#475480"/><path d="M58 60c10 8 74 8 84 0" stroke="#7F3B25" stroke-width="3" fill="none"/></svg></div>
+          <span class="plate-tag">No. 01</span>
+          <div class="work-hover"><span class="price">R12 500</span><a href="#visit">Come see it →</a></div>
+        </div>
+        <p class="work-label"><span class="no">01</span><span class="wt">Untitled (Kalk Bay)</span><span class="wa">Nomvula Sithole</span>, 2026, glazed stoneware, 42 × 30 cm<span class="price-static">R12 500</span></p>
+      </article>
+
+      <article class="work" style="--span:5; --war:4/3; --drop:4rem; --span-t:3; --drop-t:2rem">
+        <div class="plate t-linen" data-kyk data-tilt role="img" aria-label="Placeholder image: Auntie Faiza's Tablecloth, an oil painting of a blue and cream checked tablecloth seen from above.">
+          <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true"><ellipse cx="100" cy="80" rx="60" ry="40" fill="#DCCD8B" stroke="#475480" stroke-width="3"/><use href="#delft-rose" x="70" y="50" width="60" height="60" color="#475480"/></svg></div>
+          <span class="plate-tag">No. 02</span>
+          <span class="sold" aria-hidden="true"><span>SOLD<small>sorry!</small></span></span>
+          <div class="work-hover"><span class="price">Sold</span><a href="#visit">Ask about her new ones →</a></div>
+        </div>
+        <p class="work-label"><span class="no">02</span><span class="wt">Auntie Faiza’s Tablecloth</span><span class="wa">Amina Davids</span>, 2025, oil on linen, 120 × 90 cm. <strong>Sold.</strong><span class="price-static">Sold</span></p>
+      </article>
+
+      <article class="work" style="--span:3; --war:3/4; --span-t:3; --drop-t:0">
+        <div class="plate t-pear" data-kyk data-tilt role="img" aria-label="Placeholder image: Head No. 9 (Big Sis), a large earthenware head with a slip glaze, in profile.">
+          <div class="art"><svg viewBox="0 0 200 240" aria-hidden="true"><path d="M70 200h60l6 30H64z" fill="#5E2A1A"/><path d="M104 22c44 4 62 46 56 92-6 46-30 84-62 86-30-2-54-40-58-84-4-54 22-96 64-94z" fill="#B57056"/><path d="M60 100c8-5 18-5 26 0M112 100c8-5 18-5 26 0" stroke="#2E1209" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M84 160c10 5 22 5 32 0" stroke="#2E1209" stroke-width="4" stroke-linecap="round" fill="none"/></svg></div>
+          <span class="plate-tag">No. 03</span>
+          <div class="work-hover"><span class="price">R34 000</span><a href="#visit">Come see it →</a></div>
+        </div>
+        <p class="work-label"><span class="no">03</span><span class="wt">Head No. 9 (Big Sis)</span><span class="wa">Thandi Mokoena</span>, 2026, earthenware and slip, 78 × 54 × 50 cm<span class="price-static">R34 000</span></p>
+      </article>
+
+      <article class="work" style="--span:3; --war:1/1; --span-t:3">
+        <div class="plate t-ink" data-kyk data-tilt role="img" aria-label="Placeholder image: Seagull, Reconstructed, a bird welded from old boat parts with a bronze beak.">
+          <div class="art"><svg viewBox="0 0 260 200" aria-hidden="true"><path d="M20 120 96 88l40-36 40 8 28-22 24 6-24 16 14 6-30 6-6 34-40 32-66 8z" fill="#A7993C"/><path d="M228 32l30-4-26 14z" fill="#E8DDB0"/><circle cx="210" cy="36" r="3.5" fill="#2E1209"/></svg></div>
+          <span class="plate-tag">No. 04</span>
+          <span class="sold" aria-hidden="true"><span>SOLD<small>to a fisherman</small></span></span>
+          <div class="work-hover"><span class="price">Sold</span><a href="#visit">Piet’s making more →</a></div>
+        </div>
+        <p class="work-label"><span class="no">04</span><span class="wt">Seagull, Reconstructed</span><span class="wa">Piet Jacobs</span>, 2025, welded boat parts and bronze, 66 × 40 cm. <strong>Sold.</strong><span class="price-static">Sold</span></p>
+      </article>
+
+      <article class="work" style="--span:2; --war:8/21; --drop:-3rem; --span-t:2; --span-m:1">
+        <div class="plate t-slip" data-kyk data-tilt role="img" aria-label="Placeholder image: Rank, 6:14am, a tiny gouache painting of a minibus taxi on a till slip.">
+          <div class="art"><svg viewBox="0 0 100 60" aria-hidden="true"><rect x="6" y="14" width="84" height="34" rx="9" fill="#E8DDB0"/><rect x="14" y="20" width="16" height="11" fill="#475480"/><rect x="34" y="20" width="16" height="11" fill="#475480"/><rect x="54" y="20" width="16" height="11" fill="#475480"/><circle cx="26" cy="50" r="7" fill="#2E1209"/><circle cx="72" cy="50" r="7" fill="#2E1209"/></svg></div>
+          <div class="work-hover"><span class="price">R2 400</span><a href="#visit">Come see it →</a></div>
+        </div>
+        <p class="work-label"><span class="no">05</span><span class="wt">Rank, 6:14am</span><span class="wa">Lwazi Ndlovu</span>, 2026, gouache on till slip, 8 × 21 cm<span class="price-static">R2 400</span></p>
+      </article>
+
+      <article class="work" style="--span:3; --war:1/1; --drop:2rem; --span-t:2; --span-m:1">
+        <div class="plate t-figs" data-kyk data-tilt role="img" aria-label="Placeholder image: Figs on a Wednesday, a square oil painting of three ripe figs on an olive-green cloth.">
+          <div class="art"></div>
+          <span class="plate-tag">No. 06</span>
+          <div class="work-hover"><span class="price">R9 800</span><a href="#visit">Come see it →</a></div>
+        </div>
+        <p class="work-label"><span class="no">06</span><span class="wt">Figs on a Wednesday</span><span class="wa">Amina Davids</span>, 2026, oil on board, 60 × 60 cm<span class="price-static">R9 800</span></p>
+      </article>
+
+      <article class="work" style="--span:4; --war:4/5; --span-t:2; --drop-t:0">
+        <div class="plate t-sea" data-kyk data-tilt role="img" aria-label="Placeholder image: Salt Lick, a small bronze of a seal curled around a block of salt.">
+          <div class="art"><svg viewBox="0 0 200 200" aria-hidden="true"><ellipse cx="100" cy="176" rx="72" ry="8" fill="#2E1209" opacity=".35"/><rect x="62" y="118" width="76" height="56" fill="#E8DDB0"/><path d="M40 150c-6-40 20-74 56-78 20-2 36 10 40 22 10-6 22-4 28 6-14 0-22 6-26 14 6 26-6 50-30 56-30 8-62 0-68-20z" fill="#A7993C"/><circle cx="118" cy="92" r="3" fill="#2E1209"/></svg></div>
+          <span class="plate-tag">No. 07</span>
+          <div class="work-hover"><span class="price">R21 000</span><a href="#visit">Come see it →</a></div>
+        </div>
+        <p class="work-label"><span class="no">07</span><span class="wt">Salt Lick</span><span class="wa">Chantal Februarie</span>, 2026, bronze, 24 × 18 × 18 cm<span class="price-static">R21 000</span></p>
+      </article>
+
+      <article class="work" style="--span:8; --war:16/10; --span-t:6; --span-m:2">
+        <div class="plate t-dusk" data-kyk data-tilt role="img" aria-label="Placeholder image: Low Tide at Muizenberg (Big Messy One), a large oil and sand painting of a sunset beach in thick, smeared bands of colour.">
+          <div class="art"></div>
+          <span class="plate-tag">No. 08 · 180 × 140 cm, yes really</span>
+          <span class="sold" aria-hidden="true"><span>SOLD<small>on opening night</small></span></span>
+          <div class="work-hover"><span class="price">Sold</span><a href="#visit">Come see it before it goes →</a></div>
+        </div>
+        <p class="work-label"><span class="no">08</span><span class="wt">Low Tide at Muizenberg (Big Messy One)</span><span class="wa">Bongani Mthethwa</span>, 2025, oil and beach sand on canvas, 180 × 140 cm. <strong>Sold.</strong><span class="price-static">Sold</span></p>
+      </article>
+
+      <aside class="backroom" aria-label="A note about the back room">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#delft-rose"/></svg>
+        <p class="hand">Not on the wall?</p>
+        <p>There’s more in the back room, behind the bicycle. Ask Mo and she’ll pull things out until you say stop.</p>
+        <p class="label">Lay-by over 3 months · No extra cost</p>
+      </aside>
+    </div>
+
+    <p class="folio"><b>KLIPKOP</b><span>The Collection</span><span>p. 22–30</span></p>
+  </div>
+</section>
+
+<!-- =============================== 6. MANIFESTO =============================== -->
+<section class="manifesto on-dark" id="manifesto" aria-labelledby="manifesto-title">
+  <div class="delft-band inv" aria-hidden="true"></div>
+  <div class="wrap inner">
+    <svg class="rosette" style="right:var(--gutter); top:clamp(2rem,5vw,4rem)" viewBox="0 0 120 120" aria-hidden="true"><use href="#delft-rose"/></svg>
+    <p class="label" style="margin-bottom:1.5rem">A small manifesto · p. 31</p>
+    <h2 class="display reveal" id="manifesto-title">
+      <span class="ln"><span style="--i:0">Art shouldn’t</span></span>
+      <span class="ln"><span style="--i:1">need a</span></span>
+      <span class="ln"><span style="--i:2"><em>dress code.</em></span></span>
+    </h2>
+    <ul class="mani-lines">
+      <li>No velvet ropes. Just really good stuff made by people who live here.</li>
+      <li>Touch with your eyes. Ask about everything else.</li>
+      <li>Open Tuesday to Saturday, or whenever the kettle’s on.</li>
+    </ul>
+    <p class="mani-sign">— Mo, who owns the place (and the kettle)</p>
+    <p class="folio"><b>KLIPKOP</b><span>Manifesto</span><span>p. 31</span></p>
+  </div>
+  <div class="delft-band inv" aria-hidden="true"></div>
+</section>
+
+<!-- =============================== 7. VISIT =============================== -->
+<section class="section" id="visit" aria-labelledby="visit-title">
+  <div class="wrap">
+    <span class="edge" aria-hidden="true">Visit · Albert Road · p. 34</span>
+    <div class="kicker"><span class="label pill">Visit</span><span class="label">Howzit, come through</span></div>
+    <div class="visit-grid">
+      <div>
+        <h2 class="sec-title display reveal" id="visit-title">
+          <span class="ln"><span style="--i:0">Come</span></span>
+          <span class="ln"><span style="--i:1"><em>say hi</em></span></span>
+        </h2>
+        <address class="addr">KLIPKOP Gallery<br>148 Albert Road<br>Woodstock, Cape Town 7925</address>
+        <dl class="hours">
+          <div><dt>Tuesday – Friday</dt><dd>10:00 – 17:00</dd></div>
+          <div><dt>Saturday</dt><dd>09:00 – 15:00</dd></div>
+          <div class="closed"><dt>Sunday &amp; Monday</dt><dd>closed, gone to the beach</dd></div>
+        </dl>
+        <p class="coffee">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="#2E1209" stroke-width="2.4" stroke-linecap="round"><path d="M8 20h26v8c0 8-6 14-13 14S8 36 8 28z"/><path d="M34 23c6 0 8 3 8 6s-3 6-8 6"/><path d="M15 6c-3 4 3 6 0 10M22 4c-3 4 3 6 0 10M29 6c-3 4 3 6 0 10"/></g></svg>
+          <span>Free entry. Coffee costs R25.</span>
+        </p>
+        <p class="getting">Train to Woodstock station, then a six-minute walk. Parking on Albert Road if you’re lucky, or round the back by the tyre place if you’re not. Wheelchair-friendly ground floor; the back room has one step and Mo will help.</p>
+      </div>
+
+      <figure class="map-fig">
+        <svg class="map" viewBox="0 0 400 300" role="img" aria-labelledby="mapTitle mapDesc">
+          <title id="mapTitle">Hand-drawn map to KLIPKOP</title>
+          <desc id="mapDesc">A sketch map of Woodstock. KLIPKOP is on Albert Road, between Searle Street and the Biscuit Mill. Victoria Road runs parallel below it, and the railway and Woodstock station are further toward the sea.</desc>
+          <defs>
+            <filter id="wobble"><feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+          </defs>
+          <circle cx="330" cy="230" r="34" fill="none" stroke="#B57056" stroke-width="5" opacity=".28"/>
+          <g filter="url(#wobble)" fill="none" stroke-linecap="round">
+            <!-- roads: outline then fill -->
+            <g stroke="#7F3B25" stroke-width="18">
+              <path d="M-10 118C110 108 250 128 410 114"/>
+              <path d="M-10 186C130 178 260 198 410 182"/>
+              <path d="M150 -10C156 100 146 200 154 310"/>
+              <path d="M300 -10C290 80 306 160 296 210"/>
+            </g>
+            <g stroke="#E8DDB0" stroke-width="14">
+              <path d="M-10 118C110 108 250 128 410 114"/>
+              <path d="M-10 186C130 178 260 198 410 182"/>
+              <path d="M150 -10C156 100 146 200 154 310"/>
+              <path d="M300 -10C290 80 306 160 296 210"/>
+            </g>
+            <!-- railway -->
+            <path d="M-10 252L410 238" stroke="#475480" stroke-width="2.4"/>
+            <path d="M-10 252L410 238" stroke="#475480" stroke-width="10" stroke-dasharray="1.6 9"/>
+            <!-- biscuit mill -->
+            <rect x="316" y="132" width="58" height="34" stroke="#7F3B25" stroke-width="2" fill="#DCCD8B"/>
+            <!-- station -->
+            <rect x="96" y="232" width="34" height="18" stroke="#475480" stroke-width="2" fill="#DCCD8B"/>
+          </g>
+          <!-- gallery -->
+          <g transform="translate(232 92)">
+            <path d="M0-14 4-4 15-4 6 3 9 14 0 7-9 14-6 3-15-4-4-4z" fill="#B57056" stroke="#7F3B25" stroke-width="1.5"/>
+          </g>
+          <path class="draw" d="M200 70c20-22 78-16 74 6-4 20-62 26-76 8-8-10 6-24 34-26" fill="none" stroke="#B57056" stroke-width="2.6" stroke-linecap="round"/>
+          <g font-family="Caveat, cursive" font-weight="700" fill="#475480">
+            <text x="196" y="56" font-size="22">KLIPKOP! ☕</text>
+            <text x="18" y="108" font-size="15" fill="#7F3B25">Albert Rd</text>
+            <text x="18" y="176" font-size="15" fill="#7F3B25">Victoria Rd</text>
+            <text x="160" y="30" font-size="15" fill="#7F3B25">Searle St</text>
+            <text x="314" y="156" font-size="13" fill="#7F3B25">Biscuit Mill</text>
+            <text x="300" y="196" font-size="13">(Saturdays = chaos)</text>
+            <text x="78" y="272" font-size="15">Woodstock stn</text>
+            <text x="18" y="148" font-size="14">parking? good luck</text>
+            <text x="250" y="290" font-size="15">sea that way ↓</text>
+            <text x="18" y="30" font-size="15">↑ the mountain (you can't miss it)</text>
+          </g>
+          <g transform="translate(372 40)" fill="none" stroke="#475480" stroke-width="2" stroke-linecap="round">
+            <path d="M0 16V-12M-6-4 0-12 6-4"/>
+            <text x="-5" y="32" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#475480" stroke="none">N</text>
+          </g>
+        </svg>
+        <figcaption><span class="label">Fig. 9</span> Not to scale. Drawn by Mo on the back of a receipt.</figcaption>
+      </figure>
+    </div>
+    <p class="folio"><b>KLIPKOP</b><span>Visit</span><span>p. 34</span></p>
+  </div>
+</section>
+
+</main>
+
+<!-- =============================== 8. FOOTER =============================== -->
+<footer class="footer on-dark" id="kyk-letter" aria-labelledby="kyk-title">
+  <div class="delft-band inv" aria-hidden="true"></div>
+  <div class="wrap inner">
+    <div class="footer-grid">
+      <div>
+        <p class="label">Say howzit · p. 38</p>
+        <h2 class="display reveal" id="kyk-title" style="margin-top:1rem">
+          <span class="ln"><span style="--i:0">The <em>Kyk</em></span></span>
+          <span class="ln"><span style="--i:1">Letter</span></span>
+        </h2>
+        <p class="lede">About once a month. New shows, studio visits, and whatever’s on the coffee table. No spam, promise.</p>
+        <form class="signup" id="signup" novalidate>
+          <div class="field">
+            <label for="email">Your email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="Your email address" required aria-describedby="signupMsg">
+          </div>
+          <button class="btn" type="submit">Sign me up</button>
+          <p class="signup-msg" id="signupMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <dl class="contact">
+        <dt>Instagram</dt><dd>@klipkop.gallery</dd>
+        <dt>Email</dt><dd>howzit@klipkop.co.za</dd>
+        <dt>Phone</dt><dd>021 447 0707</dd>
+        <dt>Find us</dt><dd>148 Albert Road, Woodstock</dd>
+      </dl>
+    </div>
+    <p class="signoff">Made in Cape Town. <b>Obviously.</b></p>
+    <p class="folio"><b>KLIPKOP</b><span>Issue No. 07 · Set in Fraunces &amp; DM Sans · A design mock-up: all artists and works are invented</span><span>p. 40</span></p>
+  </div>
+</footer>
+
+<div class="cursor" aria-hidden="true">
+  <span class="dot"></span>
+  <span class="eye">
+    <svg viewBox="0 0 40 22"><path d="M2 11C10 1 30 1 38 11 30 21 10 21 2 11z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="11" r="6" fill="currentColor"/><circle cx="22" cy="9" r="1.8" fill="#DCCD8B"/></svg>
+    <span>kom kyk</span>
+  </span>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* ---- fit the masthead to the full width ---- */
+  var word = document.getElementById('mastWord');
+  var title = word && word.parentElement;
+  function fit(){
+    if(!word) return;
+    title.style.fontSize = '100px';
+    var w = word.getBoundingClientRect().width;
+    var avail = title.clientWidth;
+    if (w > 0) title.style.fontSize = (100 * avail / w * 0.995) + 'px';
+  }
+  fit();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(fit, 80); });
+
+  /* ---- reveal headlines line by line (only things below the first screen wait) ---- */
+  if ('IntersectionObserver' in window && !reduce){
+    var targets = document.querySelectorAll('.reveal, .draw');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.remove('is-pending'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){
+      if (el.getBoundingClientRect().top > window.innerHeight * 0.92){
+        el.classList.add('is-pending'); io.observe(el);
+      }
+    });
+  }
+
+  /* ---- tilt + parallax on artworks ---- */
+  if (fine && !reduce){
+    document.querySelectorAll('[data-tilt]').forEach(function(p){
+      var art = p.querySelector('.art');
+      p.addEventListener('pointermove', function(e){
+        var r = p.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - .5;
+        var y = (e.clientY - r.top) / r.height - .5;
+        p.style.setProperty('--ry', (x * 5).toFixed(2) + 'deg');
+        p.style.setProperty('--rx', (-y * 5).toFixed(2) + 'deg');
+        if (art){ art.style.setProperty('--px', (-x * 14).toFixed(1) + 'px'); art.style.setProperty('--py', (-y * 14).toFixed(1) + 'px'); }
+      });
+      p.addEventListener('pointerleave', function(){
+        p.style.setProperty('--ry','0deg'); p.style.setProperty('--rx','0deg');
+        if (art){ art.style.setProperty('--px','0px'); art.style.setProperty('--py','0px'); }
+      });
+    });
+  }
+
+  /* ---- custom cursor: dot, ring over links, "kom kyk" eye over artworks ---- */
+  if (fine){
+    var c = document.querySelector('.cursor');
+    var x = -100, y = -100, cx = -100, cy = -100, raf = null;
+    document.documentElement.classList.add('has-cursor');
+    function loop(){
+      cx += (x - cx) * (reduce ? 1 : .28); cy += (y - cy) * (reduce ? 1 : .28);
+      c.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+      raf = (Math.abs(x - cx) > .2 || Math.abs(y - cy) > .2) ? requestAnimationFrame(loop) : null;
+    }
+    window.addEventListener('pointermove', function(e){
+      if (e.pointerType !== 'mouse') return;
+      x = e.clientX; y = e.clientY;
+      if (!raf) raf = requestAnimationFrame(loop);
+      var t = e.target;
+      c.classList.toggle('is-kyk', !!(t.closest && t.closest('[data-kyk]')) && !t.closest('a'));
+      c.classList.toggle('is-link', !!(t.closest && t.closest('a, button, label')));
+    });
+    document.addEventListener('mouseleave', function(){ document.documentElement.classList.remove('has-cursor'); });
+    document.addEventListener('mouseenter', function(){ document.documentElement.classList.add('has-cursor'); });
+  }
+
+  /* ---- newsletter (mock: nothing is sent) ---- */
+  var form = document.getElementById('signup');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var input = document.getElementById('email');
+    var msg = document.getElementById('signupMsg');
+    var v = input.value.trim();
+    if (!v || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
+      msg.textContent = 'Eish, that email looks a bit off. Try again?';
+      input.setAttribute('aria-invalid','true'); input.focus();
+      return;
+    }
+    input.removeAttribute('aria-invalid');
+    msg.textContent = 'Lekker, you’re on the list. (Mock-up, so nothing was actually sent.)';
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>
