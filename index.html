@@ -237,7 +237,7 @@ em,i{font-style:italic}
 }
 .t-slip .art::before{
   content:"SPAZA 24HR\A BREAD     R18.99\A AMASI     R15.50\A TOTAL     R34.49";
-  white-space:pre; position:absolute; top:6%; left:10%; right:8%;
+  white-space:pre; position:absolute; top:9%; left:10%; right:8%; overflow:hidden;
   font-family:var(--mono); font-size:.5rem; line-height:1.5; color:var(--cr); letter-spacing:.04em;
 }
 .t-slip .art svg{width:80%; margin-top:42%}
@@ -293,15 +293,16 @@ em,i{font-style:italic}
   .cover-title{grid-column:1 / -1}
   .cover-dek{grid-column:1 / -1; padding-bottom:0; margin-top:1rem}
   .cover-fig{grid-column:1 / -1; grid-row:auto}
-  .cover-quote{grid-column:2 / -1; grid-row:auto; margin-top:-3rem}
+  .cover-quote{grid-column:2 / -1; grid-row:auto; margin-top:1.5rem; border-left:1px solid var(--cr)}
   .cover-intro{grid-column:1 / 8; grid-row:auto; padding-left:0; margin-top:1rem}
   .cover-five{grid-column:8 / -1; grid-row:auto; margin-top:1rem}
 }
 @media (max-width:640px){
-  .cover-quote{grid-column:1 / -1; margin-top:-2rem; margin-left:1.5rem}
+  .cover-quote{grid-column:1 / -1; margin-top:1.5rem; margin-left:0; padding-left:1.1rem}
   .cover-intro, .cover-five{grid-column:1 / -1; padding-left:0}
   .cover-five{margin-top:2rem}
-  .cover-note{top:-2.4rem; right:.4rem; font-size:1.4rem}
+  .cover-note{top:auto; bottom:.2rem; right:.6rem; font-size:1.3rem}
+  .cover-quote figcaption{padding-right:6.5rem}
 }
 
 /* =================================================================
@@ -376,7 +377,9 @@ em,i{font-style:italic}
 @media (max-width:760px){
   .spread-b .plate{height:clamp(380px, 110vw, 560px)}
   .spread-b .plate .art svg{width:80%; margin-left:20%; margin-top:-30%}
-  .spread-b .overlay{position:relative; padding-block:0; margin-top:-9rem}
+  .spread-b .overlay{position:relative; padding-block:0; margin-top:-13.5rem}
+  .spread-b .overlay .wrap{gap:2.5rem}
+  .spread-b .shade{background:linear-gradient(0deg, rgba(46,18,9,.92) 0%, rgba(46,18,9,.6) 38%, transparent 70%)}
   .spread-b .overlay .wrap{grid-template-columns:1fr}
   .spread-b .capbox{justify-self:stretch; max-width:none; border:1px solid var(--cr)}
 }
@@ -399,6 +402,7 @@ em,i{font-style:italic}
 .spread-d .text{grid-column:1 / 6}
 .spread-d .slips{grid-column:6 / 13; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(10px,2.5vw,36px); padding-top:2rem; align-items:start}
 .slip{position:relative}
+.work .t-ink .art svg{width:94%}
 .slip .plate{--ar:8 / 21}
 .slip:nth-child(1){transform:rotate(-2.5deg)}
 .slip:nth-child(2){transform:rotate(1.8deg); margin-top:3rem}
@@ -413,11 +417,11 @@ em,i{font-style:italic}
 @media (max-width:860px){
   .spread-a .fig{grid-column:1 / -1; grid-row:2}
   .spread-a .feat-no{grid-column:1 / -1; grid-row:1; justify-self:start}
-  .spread-a .card{grid-column:2 / -1; grid-row:3; margin-top:-4rem}
-  .spread-a .note{left:auto; right:6%; top:8%}
-  .spread-c .text{grid-column:1 / -1; grid-row:2; padding-top:2rem}
-  .spread-c .vname{grid-column:1 / 4; grid-row:1}
-  .spread-c .fig{grid-column:4 / -1; grid-row:1}
+  .spread-a .card{grid-column:2 / -1; grid-row:3; margin-top:1.5rem}
+  .spread-a .note{left:auto; right:.6rem; top:-.2rem; font-size:1.3rem}
+  .spread-c .text{grid-column:1 / -1; grid-row:1; padding-bottom:2rem}
+  .spread-c .vname{grid-column:1 / 4; grid-row:2}
+  .spread-c .fig{grid-column:4 / -1; grid-row:2}
   .spread-d .text{grid-column:1 / -1}
   .spread-d .slips{grid-column:1 / -1}
 }
@@ -425,6 +429,14 @@ em,i{font-style:italic}
   .spread-a .card{grid-column:1 / -1; margin-left:1rem; box-shadow:6px 6px 0 var(--sb)}
   .spread-c .vname{font-size:clamp(2.8rem,15vw,4.4rem)}
   .slip .plate-caption .label{letter-spacing:.06em}
+  .spread-d .slips{gap:14px}
+  .slip:nth-child(n){margin-top:0}
+  .slip:nth-child(1){transform:rotate(-1.5deg)}
+  .slip:nth-child(2){transform:rotate(1deg)}
+  .slip:nth-child(3){transform:rotate(-.6deg)}
+  .slip::before{width:64%; height:18px; top:-9px}
+  .t-slip .art::before{font-size:.4rem; top:9%}
+  .slip .plate-caption{font-size:.72rem}
 }
 
 /* =================================================================
@@ -485,6 +497,10 @@ em,i{font-style:italic}
 @media (max-width:560px){
   .catalogue{grid-template-columns:repeat(2,minmax(0,1fr))}
   .work{grid-column:span var(--span-m,2); margin-top:0}
+  .work .plate{--ar:var(--war-m, var(--war, 4 / 5))}
+  .work-label{font-size:.8rem}
+  .work-label .wt{font-size:1.02rem}
+  .work-label .no{float:none; display:block; padding:0 0 .15rem; margin:0}
   .backroom{grid-column:span 2}
   .sold{width:68px; height:68px; font-size:1rem}
   .sold small{font-size:.85rem}
@@ -500,7 +516,7 @@ em,i{font-style:italic}
 .manifesto .rosette{color:var(--mk); opacity:.85}
 .mani-lines{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem clamp(1.5rem,3vw,3rem); margin-top:clamp(3rem,6vw,5rem)}
 .mani-lines li{border-top:1px solid var(--mk); padding-top:1rem; font-family:var(--serif); font-size:clamp(1.25rem,1.9vw,1.6rem); line-height:1.25}
-.mani-sign{font-family:var(--hand); font-size:clamp(1.6rem,2.6vw,2.3rem); color:var(--mk-hi); margin-top:2.5rem; transform:rotate(-2deg); display:inline-block}
+.mani-sign{font-family:var(--hand); font-size:clamp(1.6rem,2.6vw,2.3rem); color:var(--mk-hi); margin-top:2.5rem; transform:rotate(-2deg); display:inline-block; line-height:1.1}
 @media (max-width:760px){ .mani-lines{grid-template-columns:1fr} }
 
 /* =================================================================
@@ -562,6 +578,7 @@ em,i{font-style:italic}
 }
 .signoff b{font-style:normal; font-weight:700; font-variation-settings:"SOFT" 0,"WONK" 0}
 .footer .folio{margin-top:2.5rem}
+.colophon{margin-top:.8rem; font-size:.8rem}
 @media (max-width:760px){ .footer-grid{grid-template-columns:1fr} }
 
 /* =================================================================
@@ -863,7 +880,7 @@ em,i{font-style:italic}
         <p class="label">Feature 03 of 04 · Oil on linen · Salt River</p>
         <p class="feat-bio">Amina paints her aunties’ kitchens in Salt River, one tablecloth at a time. She does not take requests.</p>
         <p class="feat-body">Big oils, thick paint, lots of blue-and-white china. She paints from memory and, she says, from smell. Ask her about the one with the burnt koeksisters. She’ll tell you it’s a self-portrait.</p>
-        <span class="hand" aria-hidden="true">← that tablecloth is real. It’s in the kitchen.</span>
+        <span class="hand" aria-hidden="true">that tablecloth is real. It’s in her kitchen.</span>
       </div>
       <h3 class="vname display" id="f3">Amina <em>Davids</em></h3>
       <figure class="fig">
@@ -951,10 +968,10 @@ em,i{font-style:italic}
           <span class="sold" aria-hidden="true"><span>SOLD<small>sorry!</small></span></span>
           <div class="work-hover"><span class="price">Sold</span><a href="#visit">Ask about her new ones →</a></div>
         </div>
-        <p class="work-label"><span class="no">02</span><span class="wt">Auntie Faiza’s Tablecloth</span><span class="wa">Amina Davids</span>, 2025, oil on linen, 120 × 90 cm. <strong>Sold.</strong><span class="price-static">Sold</span></p>
+        <p class="work-label"><span class="no">02</span><span class="wt">Auntie Faiza’s Tablecloth</span><span class="wa">Amina Davids</span>, 2025, oil on linen, 120 × 90 cm. <strong>Sold.</strong></p>
       </article>
 
-      <article class="work" style="--span:3; --war:3/4; --span-t:3; --drop-t:0">
+      <article class="work" style="--span:3; --war:3/4; --span-t:3; --drop-t:0; --span-m:1; --war-m:4/5">
         <div class="plate t-pear" data-kyk data-tilt role="img" aria-label="Placeholder image: Head No. 9 (Big Sis), a large earthenware head with a slip glaze, in profile.">
           <div class="art"><svg viewBox="0 0 200 240" aria-hidden="true"><path d="M70 200h60l6 30H64z" fill="#5E2A1A"/><path d="M104 22c44 4 62 46 56 92-6 46-30 84-62 86-30-2-54-40-58-84-4-54 22-96 64-94z" fill="#B57056"/><path d="M60 100c8-5 18-5 26 0M112 100c8-5 18-5 26 0" stroke="#2E1209" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M84 160c10 5 22 5 32 0" stroke="#2E1209" stroke-width="4" stroke-linecap="round" fill="none"/></svg></div>
           <span class="plate-tag">No. 03</span>
@@ -963,17 +980,17 @@ em,i{font-style:italic}
         <p class="work-label"><span class="no">03</span><span class="wt">Head No. 9 (Big Sis)</span><span class="wa">Thandi Mokoena</span>, 2026, earthenware and slip, 78 × 54 × 50 cm<span class="price-static">R34 000</span></p>
       </article>
 
-      <article class="work" style="--span:3; --war:1/1; --span-t:3">
+      <article class="work" style="--span:3; --war:1/1; --span-t:3; --span-m:1; --war-m:4/5">
         <div class="plate t-ink" data-kyk data-tilt role="img" aria-label="Placeholder image: Seagull, Reconstructed, a bird welded from old boat parts with a bronze beak.">
           <div class="art"><svg viewBox="0 0 260 200" aria-hidden="true"><path d="M20 120 96 88l40-36 40 8 28-22 24 6-24 16 14 6-30 6-6 34-40 32-66 8z" fill="#A7993C"/><path d="M228 32l30-4-26 14z" fill="#E8DDB0"/><circle cx="210" cy="36" r="3.5" fill="#2E1209"/></svg></div>
           <span class="plate-tag">No. 04</span>
           <span class="sold" aria-hidden="true"><span>SOLD<small>to a fisherman</small></span></span>
           <div class="work-hover"><span class="price">Sold</span><a href="#visit">Piet’s making more →</a></div>
         </div>
-        <p class="work-label"><span class="no">04</span><span class="wt">Seagull, Reconstructed</span><span class="wa">Piet Jacobs</span>, 2025, welded boat parts and bronze, 66 × 40 cm. <strong>Sold.</strong><span class="price-static">Sold</span></p>
+        <p class="work-label"><span class="no">04</span><span class="wt">Seagull, Reconstructed</span><span class="wa">Piet Jacobs</span>, 2025, welded boat parts and bronze, 66 × 40 cm. <strong>Sold.</strong></p>
       </article>
 
-      <article class="work" style="--span:2; --war:8/21; --drop:-3rem; --span-t:2; --span-m:1">
+      <article class="work" style="--span:2; --war:8/21; --drop:-3rem; --span-t:2; --span-m:1; --war-m:2/3">
         <div class="plate t-slip" data-kyk data-tilt role="img" aria-label="Placeholder image: Rank, 6:14am, a tiny gouache painting of a minibus taxi on a till slip.">
           <div class="art"><svg viewBox="0 0 100 60" aria-hidden="true"><rect x="6" y="14" width="84" height="34" rx="9" fill="#E8DDB0"/><rect x="14" y="20" width="16" height="11" fill="#475480"/><rect x="34" y="20" width="16" height="11" fill="#475480"/><rect x="54" y="20" width="16" height="11" fill="#475480"/><circle cx="26" cy="50" r="7" fill="#2E1209"/><circle cx="72" cy="50" r="7" fill="#2E1209"/></svg></div>
           <div class="work-hover"><span class="price">R2 400</span><a href="#visit">Come see it →</a></div>
@@ -981,7 +998,7 @@ em,i{font-style:italic}
         <p class="work-label"><span class="no">05</span><span class="wt">Rank, 6:14am</span><span class="wa">Lwazi Ndlovu</span>, 2026, gouache on till slip, 8 × 21 cm<span class="price-static">R2 400</span></p>
       </article>
 
-      <article class="work" style="--span:3; --war:1/1; --drop:2rem; --span-t:2; --span-m:1">
+      <article class="work" style="--span:3; --war:1/1; --drop:2rem; --span-t:2; --span-m:1; --war-m:2/3">
         <div class="plate t-figs" data-kyk data-tilt role="img" aria-label="Placeholder image: Figs on a Wednesday, a square oil painting of three ripe figs on an olive-green cloth.">
           <div class="art"></div>
           <span class="plate-tag">No. 06</span>
@@ -1006,7 +1023,7 @@ em,i{font-style:italic}
           <span class="sold" aria-hidden="true"><span>SOLD<small>on opening night</small></span></span>
           <div class="work-hover"><span class="price">Sold</span><a href="#visit">Come see it before it goes →</a></div>
         </div>
-        <p class="work-label"><span class="no">08</span><span class="wt">Low Tide at Muizenberg (Big Messy One)</span><span class="wa">Bongani Mthethwa</span>, 2025, oil and beach sand on canvas, 180 × 140 cm. <strong>Sold.</strong><span class="price-static">Sold</span></p>
+        <p class="work-label"><span class="no">08</span><span class="wt">Low Tide at Muizenberg (Big Messy One)</span><span class="wa">Bongani Mthethwa</span>, 2025, oil and beach sand on canvas, 180 × 140 cm. <strong>Sold.</strong></p>
       </article>
 
       <aside class="backroom" aria-label="A note about the back room">
@@ -1106,13 +1123,13 @@ em,i{font-style:italic}
             <text x="196" y="56" font-size="22">KLIPKOP! ☕</text>
             <text x="18" y="108" font-size="15" fill="#7F3B25">Albert Rd</text>
             <text x="18" y="176" font-size="15" fill="#7F3B25">Victoria Rd</text>
-            <text x="160" y="30" font-size="15" fill="#7F3B25">Searle St</text>
+            <text x="162" y="160" font-size="16" fill="#7F3B25">Searle St</text>
             <text x="314" y="156" font-size="13" fill="#7F3B25">Biscuit Mill</text>
-            <text x="300" y="196" font-size="13">(Saturdays = chaos)</text>
+            <text x="318" y="204" font-size="15">(Sat = chaos)</text>
             <text x="78" y="272" font-size="15">Woodstock stn</text>
             <text x="18" y="148" font-size="14">parking? good luck</text>
             <text x="250" y="290" font-size="15">sea that way ↓</text>
-            <text x="18" y="30" font-size="15">↑ the mountain (you can't miss it)</text>
+            <text x="18" y="34" font-size="16">↑ the mountain</text>
           </g>
           <g transform="translate(372 40)" fill="none" stroke="#475480" stroke-width="2" stroke-linecap="round">
             <path d="M0 16V-12M-6-4 0-12 6-4"/>
@@ -1157,7 +1174,8 @@ em,i{font-style:italic}
       </dl>
     </div>
     <p class="signoff">Made in Cape Town. <b>Obviously.</b></p>
-    <p class="folio"><b>KLIPKOP</b><span>Issue No. 07 · Set in Fraunces &amp; DM Sans · A design mock-up: all artists and works are invented</span><span>p. 40</span></p>
+    <p class="folio"><b>KLIPKOP</b><span>Issue No. 07</span><span>p. 40</span></p>
+    <p class="colophon">Set in Fraunces &amp; DM Sans. A design mock-up: all artists, works and details are invented.</p>
   </div>
 </footer>
 
